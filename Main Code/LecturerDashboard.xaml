@@ -1,0 +1,44 @@
+﻿<Window x:Class="Contract_MC_System.LecturerDashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Lecturer Dashboard" Height="500" Width="600" WindowStartupLocation="CenterScreen">
+
+    <ScrollViewer>
+        <StackPanel Margin="20">
+            <TextBlock Text="Submit Monthly Claim" FontSize="18" FontWeight="Bold" Margin="0 0 0 15"/>
+
+            <!-- Module Selection -->
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                <TextBlock Text="Select Module:" Width="150" VerticalAlignment="Center"/>
+                <ComboBox x:Name="cmbModules" Width="200" SelectionChanged="cmbModules_SelectionChanged"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                <TextBlock Text="Hourly Rate (Fixed):" Width="150" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtHourlyRate" Width="200" IsReadOnly="True" Background="#f0f0f0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                <TextBlock Text="Hours Worked:" Width="150" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtHoursWorked" Width="200" TextChanged="txtHoursWorked_TextChanged"/>
+            </StackPanel>
+
+            <Label x:Name="lblAutoTotal" Content="Total: R0.00" FontWeight="Bold" Margin="0 0 0 10"/>
+
+
+            <Button Content="Submit Claim" Width="150" Height="35" 
+                    Background="#27ae60" Foreground="White" Margin="0 10 0 20"
+                    Click="SubmitClaim_Click"/>
+
+            <TextBlock Text="Upload Supporting Document:" Margin="0 0 0 10"/>
+            <Button Content="Upload Document" Width="150" Height="35" 
+                    Background="#2980b9" Foreground="White" Click="UploadDocument_Click"/>
+            <TextBlock x:Name="txtUploadedFile" Foreground="Gray" Margin="0 10"/>
+
+            <Separator Margin="0 20"/>
+
+            <TextBlock Text="My Claim Status" FontSize="16" FontWeight="Bold" Margin="0 0 0 10"/>
+            <ListBox x:Name="lstLecturerClaims" Height="200"/>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

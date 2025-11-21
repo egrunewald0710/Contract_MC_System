@@ -1,0 +1,53 @@
+﻿<Window x:Class="Contract_MC_System.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Contract Monthly Claim System"
+        Height="480" Width="500"
+        WindowStartupLocation="CenterScreen"
+        Background="#F4F6F9"
+        ResizeMode="NoResize">
+
+    <Border CornerRadius="15" Background="White" Padding="30" Margin="20" Effect="{DynamicResource DropShadow}">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="350">
+            <TextBlock Text="Contract Monthly Claim System"
+                       FontSize="22" FontWeight="Bold"
+                       Foreground="#2C3E50" TextAlignment="Center" Margin="0 0 0 25"/>
+
+            <Button Content="Lecturer Dashboard" Style="{DynamicResource ModernButton}" Click="Lecturer_Click"/>
+            <Button Content="Coordinator Dashboard" Style="{DynamicResource ModernButton}" Background="#2980b9" Click="Coordinator_Click"/>
+            <Button Content="Manager Dashboard" Style="{DynamicResource ModernButton}" Background="#8e44ad" Click="Manager_Click"/>
+
+            <!-- Sign Out Button -->
+            <Button Content="Sign Out" Style="{DynamicResource ModernButton}" Background="#e74c3c" Click="SignOut_Click" Width="155"/>
+        </StackPanel>
+    </Border>
+
+    <Window.Resources>
+        <DropShadowEffect x:Key="DropShadow" BlurRadius="15" ShadowDepth="3" Opacity="0.25"/>
+        <Style x:Key="ModernButton" TargetType="Button">
+            <Setter Property="Margin" Value="0 10 0 10"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Background" Value="#27ae60"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="8" 
+                                Padding="8">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2ecc71"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+</Window>

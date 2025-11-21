@@ -1,0 +1,24 @@
+﻿<Window x:Class="Contract_MC_System.CoordinatorDashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Coordinator Dashboard" Height="450" Width="600" WindowStartupLocation="CenterScreen">
+
+    <StackPanel Margin="20">
+        <TextBlock Text="Pending Claims for Verification" FontSize="18" FontWeight="Bold" Margin="0 0 0 15"/>
+        <ListBox x:Name="lstCoordinatorClaims" Height="250"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button Content="Approve" Width="120" Background="#27ae60" Foreground="White" Margin="5"
+                    Click="ApproveClaim_Click"/>
+            <Button Content="Reject" Width="120" Background="#c0392b" Foreground="White" Margin="5"
+                    Click="RejectClaim_Click"/>
+            <Button Content="Escalate to Manager" Width="150" Background="#2980b9" Foreground="White" Margin="5"
+                    Click="EscalateClaim_Click"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button Content="Approve All Pending" Width="150" Background="#27ae60" Foreground="White" Margin="5" Click="ApproveAll_Click"/>
+            <Button Content="Auto-Validate Claims" Width="150" Background="#f39c12" Foreground="White" Margin="5" Click="AutoValidateClaims_Click"/>
+        </StackPanel>
+
+    </StackPanel>
+</Window>

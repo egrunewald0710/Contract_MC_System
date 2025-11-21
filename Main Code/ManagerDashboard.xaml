@@ -1,0 +1,19 @@
+﻿<Window x:Class="Contract_MC_System.ManagerDashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Manager Dashboard" Height="450" Width="600" WindowStartupLocation="CenterScreen">
+
+    <StackPanel Margin="20">
+        <TextBlock Text="Claims Awaiting Final Approval" FontSize="18" FontWeight="Bold" Margin="0 0 0 15"/>
+        <ListBox x:Name="lstManagerClaims" Height="250"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button Content="Approve" Width="120" Background="#27ae60" Foreground="White" Margin="5"
+            Click="Approve_Click"/>
+            <Button Content="Reject" Width="120" Background="#c0392b" Foreground="White" Margin="5"
+            Click="Reject_Click"/>
+            <Button Content="Export Approved Claims" Width="180" Background="#16a085" Foreground="White" Margin="5"
+            Click="ExportApprovedClaims_Click"/>
+        </StackPanel>
+
+    </StackPanel>
+</Window>
